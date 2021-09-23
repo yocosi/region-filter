@@ -1,10 +1,10 @@
-// Lance l'exécution quand tout est chargé
+// Launch the execute when everything is loaded
 window.addEventListener('load', go);
 
 // SAM Design Pattern
 let actions, model, state, view;
 
-// Point d'entrée de l'application
+// Entry point of the application
 function go() {
   console.log('GO !');
 
@@ -13,7 +13,7 @@ function go() {
 }
 
 //------------------------------------------------------------------ Actions ---
-// Actions lancées par des événements
+// Launch actions by the events
 //
 actions = {
 
@@ -33,13 +33,13 @@ actions = {
   }
 };
 //-------------------------------------------------------------------- Model ---
-// Unique source de vérité de l'application
+// Unique source of truth for the application
 //
 model = {
-  departments: [], // tableau contenant données sur les départements
-  mode: '',        // mode de rendu 'asList_for', 'asList_map', 'asTable_for'...
-  depFilter: '',   // filtre à appliquer aux données sur les départements
-  filterRegions: false,  // inclure les régions dans le filtrage
+  departments: [], // table containing data on departments
+  mode: '',        // rendering mode 'asList_for', 'asList_map', 'asTable_for'...
+  depFilter: '',   // filter to apply to data on departments
+  filterRegions: false,  // include regions in filtering
 
   init: function (data) {
     this.departments = data.departments;
@@ -47,8 +47,7 @@ model = {
   },
 
   samPresent: function (data) {
-    const has = Object.prototype.hasOwnProperty;   // test si la propriété
-    // d'un objet est présente
+    const has = Object.prototype.hasOwnProperty;   // test if the property of an object is present
     if (has.call(data, 'mode')) {
       this.mode = data.mode;
     }
