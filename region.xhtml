@@ -15,11 +15,12 @@
     td {
       padding: 0 1rem;
     }
+
   </style>
 </head>
 
 <body>
-  <!-- Paging with bootstrap 4
+  <!-- Mise en page avec bootstrap 4
   https://getbootstrap.com/docs/4.1/components/input-group/ -->
   <div class="container mt-3">
     <div class="input-group mt-3 mb-3">
@@ -34,6 +35,7 @@
             <option value="asList_map">Liste (map)</option>
             <option value="asTable_for">Tableau (for)</option>
             <option value="asTable_map">Tableau (map)</option>
+            <option value="asTags">Étiquettes</option>
           </select>
         </div>
         <div class="input-group mb-3">
@@ -43,7 +45,7 @@
           <input type="text" onkeyup="actions.filter({e: event})" class="form-control" />
           <div class="input-group-append">
             <div class="input-group-text">
-              <input type="checkbox" onchange="actions.filterRegions({e: event})" />
+              <input type="checkbox" onchange="actions.includesRegions({e: event})" />
             </div>
           </div>
           <div class="input-group-append">
@@ -54,8 +56,7 @@
     </div>
     <div id="app"> </div>
   </div>
-
-  <!-- Here are the scripts -->
+  <!-- Inclusion des scripts -->
   <script type="text/javascript" src="./data.js"></script>
   <script type="text/javascript" src="./regionDisplay.js"></script>
 </body>
